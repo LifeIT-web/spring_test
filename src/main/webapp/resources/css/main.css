@@ -93,6 +93,12 @@ aside#right {
     margin-left: 10px;
     width: 200px;
     float: left;
+    display: inline-block;
+    position: relative;
+}
+
+#article1 {
+	margin-left: 10px;
 }
 
 #shopcart {
@@ -110,4 +116,10 @@ footer {
     background-image: url(images/footer_bg.gif);
     background-position: top left;
     background-repeat: repeat-x;
+}
+
+.location {
+	left: 400px;
+	top: 20px;
+	bottom: 20px;
 }
