@@ -12,7 +12,7 @@
     </head>
     <body>
         <div id="page-wrap">
-            <form method="POST" action="process.jsp">
+            <form method="POST" action="/member/join">
                 <fieldset>
                     <legend>회원정보입력</legend>
                     <label for="name">아이디</label>
