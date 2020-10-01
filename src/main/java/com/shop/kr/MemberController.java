@@ -13,7 +13,13 @@ public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
 	@RequestMapping(value = "register", method = RequestMethod.GET)
-	public void join() {
+	public void getJoin() {
 		logger.info("회원가입 !~!~!~~!~~!@~!~@!~@!~@~!@~!@~!");
+	}
+	
+	@RequestMapping(value = "register", method = RequestMethod.POST)
+	public String postJoin() {
+		
+		return "";
 	}
 }
