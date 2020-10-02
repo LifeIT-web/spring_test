@@ -11,8 +11,13 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="resources/js/bootstrap.js"></script>
 <script type="text/javascript">
-	function logcheck(){
-		var chck = confirm(''); 
+	function deleteMember(){
+		var chck = confirm('회원을 탈퇴하시겠습니까?');
+
+		if(chck){
+				
+				location.href="/member/deleteMember";
+			} 
 	
 		}
 
@@ -110,7 +115,8 @@
 	</section>
 
 	<aside id="right" class="location">
-		<c:if test="${member.id != null}">
+		<c:choose>
+		<c:when test="${member.id != null}">
 		<div id="shopcart">
 			<h4>Shopping Cart</h4>
 			<!-- JSP 넣기 물품이 없으면 아래와 같이 출력 단, 물품이 있으면 있다고 출력 -->
@@ -119,26 +125,29 @@
 		</div>
 		<div id="login">
 			<h4>환영합니다. ${member.id}님</h4>
-			<button type="submit" class="btn btn-primary" onclick="href='#'">회원수정</button>
-			<button type="submit" class="btn btn-primary" onclick="href='#'">회원탈퇴</button>
+			<button type="submit" class="btn btn-primary" onclick="location.href='/member/registerUpdate'">회원수정</button>
+			<button type="submit" class="btn btn-primary" onclick="location.href='deleteMember()'">회원탈퇴</button>
 		</div>
-		</c:if>
+		</c:when>
+		<c:otherwise>
 		<div id="shopcart">
 			<h4>Shopping Cart</h4>
-			먼저 로그인을 하고 오세요.			
+			먼저 로그인을 하고 오세요.	
 		</div>
 		<div id="login">
 			<h4>Log In</h4>
-			<form action="#" method="POST">
+			<form action="/member/login" method="POST">
 				아이디 <input type="text" name="id" /><br>
 				패스워드 <input type="password" name="pw" /><br>
 				<input class="btn btn-default" type="submit" value="로그인" /><br> <!-- 로그인 id 유무 체크 js-->
 				<a role="button" class="btn btn-default" href="/member/register" id="register">회원가입</a>
-				<a role="button" class="btn btn-default" href="#" id="forgot">아이디찾기</a>
+				<a role="button" class="btn btn-default" href="/member/" id="forgot">아이디찾기</a>
 				<a role="button" class="btn btn-default" href="#" id="forgot">비밀번호찾기</a>
 				<!-- 버튼 크기 조절 필요 -->
 			</form>
 		</div>
+		</c:otherwise>
+		</c:choose>
 	</aside>
 
 	<footer> Copyright (c) 2013 Web Shop </footer>
