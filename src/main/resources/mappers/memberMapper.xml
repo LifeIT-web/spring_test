@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberMapper">
 	<!-- 회원가입 -->
-	<insert id="join">
+	<insert id="register">
 	INSERT INTO MEMBER VALUES(
 			#{id},
 			#{pw},
@@ -13,14 +13,8 @@
 			#{em}
 	)	
 	</insert>
-	<!-- 로그인 -->
-	<select id="login" resultType="com.shop.vo.MemberVo">
 	
+	<select id="login" resultType="com.shop.vo.MemberVO">
+	SELECT * FROM MEMBER WHERE ID = #{id} AND PW = #{pw}
 	</select>
-	<!-- 회원수정 -->
-	<update id="updateMember">
-	</update>
-	<!-- 회원삭제 -->
-	<delete id="deleteMember">
-	</delete>
 </mapper>

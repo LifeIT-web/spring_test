@@ -12,22 +12,20 @@
     </head>
     <body>
         <div id="page-wrap">
-            <form method="POST" action="/member/join">
+            <form method="POST" action="/member/register">
                 <fieldset>
                     <legend>회원정보입력</legend>
-                    <label for="name">아이디</label>
-                    <input type="text" name="name" id="text1" />
+                    <label for="id">아이디</label>
+                    <input type="text" name="id" id="text1" />
                     <button class="btn btn-primary">중복검사</button><br><!-- js(ajax) 추가 -->
-                    <label for="password1">패스워드</label>
-                    <input type="password" name="password1" />
-                    <label for="password2">패스워드확인</label>
-                    <input type="password" name="password2" />
+                    <label for="pw">패스워드</label>
+                    <input type="password" name="pw" />
                     <label for="name">이름</label>
                     <input type="text" name="name" /><br>
-                    <label for="tel">휴대폰 번호</label>
-                    <input type="tel" name="tel" /><br>
-                    <label for="email">이메일</label>
-                    <input type="email" name="email" /> <br>
+                    <label for="pn">휴대폰 번호</label>
+                    <input type="tel" name="pn" /><br>
+                    <label for="em">이메일</label>
+                    <input type="email" name="em" /> <br>
                 </fieldset>
                 <input type="submit" name="submit" value="제출" />
                 <input type="reset" name="reset" value="초기화" />
