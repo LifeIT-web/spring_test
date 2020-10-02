@@ -17,4 +17,12 @@
 	<select id="login" resultType="com.shop.vo.MemberVO">
 	SELECT * FROM MEMBER WHERE ID = #{id} AND PW = #{pw}
 	</select>
+	
+	<update id="registerUpdate">
+	UPDATE MEMBER SET PW = #{pw} WHERE ID = #{id} 	
+	</update>
+	
+	<delete id="registerDelete">
+	DELETE FROM MEMBER WHERE ID = #{id}
+	</delete>
 </mapper>

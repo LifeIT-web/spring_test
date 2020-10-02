@@ -26,4 +26,14 @@ public class MemberDAOImpl implements MemberDAO{
 		return sql.selectOne(mapper + ".login", vo);
 	}
 
+	@Override
+	public void registerUpdate(MemberVO vo) throws Exception {
+		sql.update(mapper + ".registerUpdate", vo);
+	}
+
+	@Override
+	public void registerDelete() throws Exception {
+		sql.delete(mapper + ".registerDelete");
+	}
+
 }
