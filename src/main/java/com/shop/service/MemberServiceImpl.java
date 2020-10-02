@@ -25,4 +25,14 @@ public class MemberServiceImpl implements MemberService{
 		return dao.login(vo);
 	}
 
+	@Override
+	public void registerUpdate(MemberVO vo) throws Exception {
+		dao.registerUpdate(vo);
+	}
+
+	@Override
+	public void registerDelete() throws Exception {
+		dao.registerDelete();
+	}
+
 }

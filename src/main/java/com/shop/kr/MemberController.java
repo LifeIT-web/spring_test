@@ -59,4 +59,28 @@ public class MemberController {
 	public void getUpdateMember() throws Exception{
 		logger.info("회원수정 화면 !@#!@#!@#!@#!@#!@#@!#!@");
 	}
+	
+	@RequestMapping(value = "registerUpdate", method = RequestMethod.POST)
+	public String postUpdateMember(MemberVO vo) throws Exception{
+		logger.info("회원수정 중(post) #1@#@1@#1@#@");
+		
+		service.registerUpdate(vo);
+		
+		return "redirect:/";
+		
+	}
+	
+	@RequestMapping(value = "registerDelete", method = RequestMethod.POST)
+	public String deleteMember(HttpSession session) throws Exception{
+		logger.info("회원 탈퇴#@1@#@@@1@#3@##131@");
+		
+		service.registerDelete();
+		
+		session.invalidate();
+		
+		return "redirect:/";
+	}
+	
+	
+	
 }
