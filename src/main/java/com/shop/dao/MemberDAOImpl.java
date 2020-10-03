@@ -32,8 +32,8 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	@Override
-	public void registerDelete() throws Exception {
-		sql.delete(mapper + ".registerDelete");
+	public void registerDelete(MemberVO vo) throws Exception {
+		sql.delete(mapper + ".registerDelete", vo);
 	}
 
 }

@@ -10,5 +10,5 @@ public interface MemberService {
 	
 	public void registerUpdate(MemberVO vo) throws Exception;
 	
-	public void registerDelete() throws Exception;
+	public void registerDelete(MemberVO vo) throws Exception;
 }
