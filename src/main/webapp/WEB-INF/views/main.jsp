@@ -13,6 +13,11 @@
 <script type="text/javascript">
 	function deleteMember(){
 		var chck = confirm('회원을 탈퇴하시겠습니까?');
+
+		if(chck){
+
+			location.href="/member/registerDelete";
+		}
 	}
 
 </script>
@@ -120,9 +125,7 @@
 		<div id="login">
 			<h4>환영합니다. ${member.id}님</h4>
 			<button type="submit" class="btn btn-primary" onclick="location.href='/member/registerUpdate'">회원수정</button>
-			<form action="/member/registerDelete" method="post">
-			<button type="submit" class="btn btn-primary">회원탈퇴</button><!-- 회원삭제 수정 해야됨 -->
-			</form>
+			<button type="submit" class="btn btn-primary" onclick="deleteMember()">회원탈퇴</button><!-- 회원삭제 수정 해야됨 -->
 		</div>
 		</c:when>
 		<c:otherwise>

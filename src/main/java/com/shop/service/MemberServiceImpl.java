@@ -31,8 +31,8 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void registerDelete() throws Exception {
-		dao.registerDelete();
+	public void registerDelete(MemberVO vo) throws Exception {
+		dao.registerDelete(vo);
 	}
 
 }

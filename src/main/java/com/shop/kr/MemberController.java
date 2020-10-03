@@ -70,11 +70,17 @@ public class MemberController {
 		
 	}
 	
+	@RequestMapping(value = "registerDelete", method = RequestMethod.GET)
+	public void getDeleteMember() throws Exception{
+		logger.info("회원 탈퇴 페이지");
+	}
+	
+	
 	@RequestMapping(value = "registerDelete", method = RequestMethod.POST)
-	public String deleteMember(HttpSession session) throws Exception{
+	public String postDeleteMember(MemberVO vo, HttpSession session) throws Exception{
 		logger.info("회원 탈퇴#@1@#@@@1@#3@##131@");
 		
-		service.registerDelete();
+		service.registerDelete(vo);
 		
 		session.invalidate();
 		
